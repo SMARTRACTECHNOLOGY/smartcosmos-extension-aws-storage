@@ -21,6 +21,26 @@
         <name>Smartrac Technology Fletcher, Inc.</name>
         <url>http://www.smartrac-group.com</url>
     </organization>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>cloud.engineering</id>
+            <name>SMARTRAC API Team</name>
+
+            <email>api@smartrac-group.com</email>
+            <organization>Smartrac Technology Fletcher, Inc.</organization>
+            <timezone>-5</timezone>
+            <roles>
+                <role>Project Lead</role>
+            </roles>
+        </developer>
+    </developers>
 
     <inceptionYear>2013</inceptionYear>
 

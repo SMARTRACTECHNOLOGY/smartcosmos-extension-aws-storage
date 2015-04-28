@@ -35,7 +35,6 @@ import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.S3Object;
 import com.google.common.base.Preconditions;
 import net.smartcosmos.objects.model.context.IFile;
-import net.smartcosmos.platform.api.ICosmosContext;
 import net.smartcosmos.platform.api.service.IStorageService;
 import net.smartcosmos.platform.base.AbstractAwsService;
 import net.smartcosmos.platform.pojo.service.StorageRequest;
@@ -53,8 +52,8 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AwsS3StorageService extends AbstractAwsService<ICosmosContext, AWSCredentials>
-        implements IStorageService<ICosmosContext>
+public class AwsS3StorageService extends AbstractAwsService<AWSCredentials>
+        implements IStorageService
 {
     private static final Logger LOG = LoggerFactory.getLogger(AwsS3StorageService.class);
 

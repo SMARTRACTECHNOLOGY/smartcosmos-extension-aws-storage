@@ -5,7 +5,7 @@
     <groupId>net.smartcosmos</groupId>
     <artifactId>aws-s3-storage-service</artifactId>
     <packaging>jar</packaging>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
 
     <name>AWS S3 Storage Services</name>
     <description>AWS S3 Storage Service Plugin</description>
@@ -49,7 +49,7 @@
         <connection>scm:git:git://github.com/SMARTRACTECHNOLOGY/smartcosmos-service-aws-storage.git</connection>
         <developerConnection>scm:git:git@github.com:SMARTRACTECHNOLOGY/smartcosmos-service-aws-storage.git
         </developerConnection>
-        <tag>HEAD</tag>
+        <tag>aws-s3-storage-service-1.2</tag>
     </scm>
 
     <distributionManagement>

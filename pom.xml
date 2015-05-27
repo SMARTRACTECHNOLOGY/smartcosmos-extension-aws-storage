@@ -76,14 +76,14 @@
         <dependency>
             <groupId>net.smartcosmos</groupId>
             <artifactId>platform-core</artifactId>
-            <version>1.3</version>
+            <version>1.6</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>net.smartcosmos</groupId>
             <artifactId>server-api</artifactId>
-            <version>1.5</version>
+            <version>1.9</version>
             <scope>provided</scope>
         </dependency>
 

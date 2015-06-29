@@ -92,7 +92,8 @@ public class AwsS3StorageService extends AbstractAwsService<AWSCredentials>
     @Override
     public StorageResponse store(StorageRequest request) throws IOException
     {
-        StorageResponse response = new StorageResponse();
+     
+        final IFile requestFile = request.getFile();
 
         AmazonS3 s3 = new AmazonS3Client(credentials, new ClientConfiguration().withProtocol(Protocol.HTTPS));
 
@@ -100,9 +101,9 @@ public class AwsS3StorageService extends AbstractAwsService<AWSCredentials>
 
         fileMetadata.put("accountUrn", request.getUser().getAccount().getUrn());
         fileMetadata.put("userUrn", request.getUser().getUrn());
-        fileMetadata.put("fileUrn", request.getFile().getUrn());
-        fileMetadata.put("entityReferenceType", request.getFile().getEntityReferenceType().name());
-        fileMetadata.put("referenceUrn", request.getFile().getReferenceUrn());
+        fileMetadata.put("fileUrn", requestFile.getUrn());
+        fileMetadata.put("entityReferenceType", requestFile.getEntityReferenceType().name());
+        fileMetadata.put("referenceUrn", requestFile.getReferenceUrn());
         fileMetadata.put("recordedTimestamp", Long.toString(request.getFile().getTimestamp()));
 //            fileMetadata.put("mimeType", request.getVfsObject().getMimeType());
 
@@ -132,17 +133,16 @@ public class AwsS3StorageService extends AbstractAwsService<AWSCredentials>
             String finalUrl = getUrl(request.getFileName());
             LOG.trace("File URL: " + finalUrl);
 
-            response.setUrl(finalUrl);
 
-            request.getFile().setUrl(getUrl(request.getFileName()));
+            requestFile.setUrl(getUrl(request.getFileName()));
 
             byte[] signature = his.getSignature();
 
-            JSONObject jsonObject = HashUtil.signFile(request.getFile(), signature);
+            JSONObject jsonObject = HashUtil.signFile(requestFile, signature);
             LOG.info("File Signature\n\n{}\n\n", jsonObject.toString(3));
 
-            response.setContentHash(jsonObject.toString(3));
 
+            return new StorageResponse(requestFile, finalUrl, jsonObject.toString(3));
         } catch (AmazonS3Exception e)
         {
             e.printStackTrace();
@@ -153,7 +153,6 @@ public class AwsS3StorageService extends AbstractAwsService<AWSCredentials>
             throw new IOException(e);
         }
 
-        return response;
     }
 
     protected String getUrl(String fileName)

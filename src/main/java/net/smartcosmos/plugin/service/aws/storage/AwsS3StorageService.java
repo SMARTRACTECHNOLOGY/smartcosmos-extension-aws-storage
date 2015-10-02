@@ -35,6 +35,8 @@ import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.S3Object;
 import com.google.common.base.Preconditions;
 import net.smartcosmos.objects.model.context.IFile;
+import net.smartcosmos.platform.api.annotation.ServiceExtension;
+import net.smartcosmos.platform.api.annotation.ServiceType;
 import net.smartcosmos.platform.api.service.IStorageService;
 import net.smartcosmos.platform.base.AbstractAwsService;
 import net.smartcosmos.platform.pojo.service.StorageRequest;
@@ -52,6 +54,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
+@ServiceExtension(serviceType = ServiceType.STORAGE)
 public class AwsS3StorageService extends AbstractAwsService<AWSCredentials>
         implements IStorageService
 {
@@ -92,7 +95,7 @@ public class AwsS3StorageService extends AbstractAwsService<AWSCredentials>
     @Override
     public StorageResponse store(StorageRequest request) throws IOException
     {
-     
+
         final IFile requestFile = request.getFile();
 
         AmazonS3 s3 = new AmazonS3Client(credentials, new ClientConfiguration().withProtocol(Protocol.HTTPS));

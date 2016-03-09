@@ -4,7 +4,7 @@
     <parent>
         <groupId>net.smartcosmos.extension</groupId>
         <artifactId>smartcosmos-extension-starter</artifactId>
-        <version>2.10.13</version>
+        <version>2.13.1</version>
         <relativePath></relativePath>
     </parent>
     <artifactId>smartcosmos-extension-aws-storage</artifactId>
@@ -26,10 +26,12 @@
         <dependency>
             <groupId>net.smartcosmos</groupId>
             <artifactId>smartcosmos-core</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>net.smartcosmos</groupId>
             <artifactId>smartcosmos-extension-api</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>net.smartcosmos.extension</groupId>

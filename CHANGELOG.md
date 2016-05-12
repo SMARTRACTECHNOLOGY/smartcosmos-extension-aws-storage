@@ -1,5 +1,13 @@
 # SMART COSMOS AWS S3 Storage Service Extension Release Notes
 
+## UNRELEASED
+
+### New Features
+
+* No new features are added in this release.
+
+### Bugfixes & Improvements
+
 ## Release 2.0.2 (May 12, 2016)
 
 ### New Features

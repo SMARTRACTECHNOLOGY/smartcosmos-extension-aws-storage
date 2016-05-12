@@ -1,6 +1,6 @@
 # SMART COSMOS AWS S3 Storage Service Extension Release Notes
 
-## UNRELEASED
+## Release 2.0.2 (May 12, 2016)
 
 ### New Features
 
@@ -9,6 +9,7 @@
 ### Bugfixes & Improvements
 
 * SCE-19 AWS Extensions don't have SDK classes
+* SMART COSMOS Framework dependency updated to 2.14.0
 
 ## Release 2.0.1 (March 9, 2016)
 
